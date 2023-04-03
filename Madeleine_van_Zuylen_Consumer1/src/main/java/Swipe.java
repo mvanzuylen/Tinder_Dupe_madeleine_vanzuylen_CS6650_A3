@@ -2,13 +2,13 @@ public class Swipe {
   private String swiperId;
   private String swipeeId;
   private String direction;
-  private String comment;
+  //private String comment;
 
-  public Swipe(String swiperId, String swipeeId, String direction, String comment){
+  public Swipe(String swiperId, String swipeeId, String direction){
     this.swiperId = swiperId;
     this.swipeeId = swipeeId;
     this.direction = direction;
-    this.comment = comment;
+    //this.comment = comment;
   }
 
   public String getSwiperId() {
@@ -22,8 +22,9 @@ public class Swipe {
   public String getDirection() {
     return direction;
   }
-
+/**
   public String getComment() {
     return comment;
   }
+ */
 }

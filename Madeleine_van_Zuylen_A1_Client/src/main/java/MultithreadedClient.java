@@ -23,13 +23,16 @@ import java.util.stream.Stream;
 
 public class MultithreadedClient {
 
-  final static private int NUMTHREADS = 5; //100
-  private static int NUMPOSTS = 50000; //500000
-  //private static String url = "http://35.163.67.34:8080/Madeleine_van_Zuylen_A1_war/twinder"; // One servlet
+  final static private int NUMTHREADS = 50; //100
+  private static int NUMPOSTS = 500000; //500000
+  private static String url = "http://54.218.172.185:8080/Madeleine_van_Zuylen_A1_war/twinder/"; // One servlet
+  private static String urlMatches = "http://54.218.172.185:8080/Madeleine_van_Zuylen_A1_war/get_matches/"; // One servlet
+  private static String urlStats = "http://54.218.172.185:8080/Madeleine_van_Zuylen_A1_war/get_stats/"; // One servlet
+
   //private static String url = "http://mvz-alb-1104176885.us-west-2.elb.amazonaws.com:8080/Madeleine_van_Zuylen_A1_war/twinder"; // Load Balancer
-  private static String url = "http://localhost:8080/Madeleine_van_Zuylen_A1_war_exploded/twinder/"; // Localhost
-  private static String urlMatches = "http://localhost:8080/Madeleine_van_Zuylen_A1_war_exploded/get_matches/"; // Localhost
-  private static String urlStats = "http://localhost:8080/Madeleine_van_Zuylen_A1_war_exploded/get_stats/"; // Localhost
+  //private static String url = "http://localhost:8080/Madeleine_van_Zuylen_A1_war_exploded/twinder/"; // Localhost
+  //private static String urlMatches = "http://localhost:8080/Madeleine_van_Zuylen_A1_war_exploded/get_matches/"; // Localhost
+  //private static String urlStats = "http://localhost:8080/Madeleine_van_Zuylen_A1_war_exploded/get_stats/"; // Localhost
   private static AtomicInteger numSuccessfulRequests = new AtomicInteger(0);
   private static AtomicInteger numUnSuccessfulRequests = new AtomicInteger(0);
   private static String postCsv = "posts.csv";
@@ -228,11 +231,12 @@ public class MultithreadedClient {
     completed.await();
 
     // GET threads
+
     completed2.await();
     //System.out.println("latency size: " + getLatencyData.size());
     //System.out.println("latency array: " + getLatencyData.toString());
-    System.out.println("successful matches: " + countSuccessfulMatches.get());
-    System.out.println("successful stats: " + countSuccessfulStats.get());
+    //System.out.println("successful matches: " + countSuccessfulMatches.get());
+    //System.out.println("successful stats: " + countSuccessfulStats.get());
 
     // Get Information
     System.out.println("GET Stats: ");

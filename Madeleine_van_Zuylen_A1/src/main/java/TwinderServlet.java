@@ -22,8 +22,8 @@ public class TwinderServlet extends HttpServlet {
 
   public Connection connection;
   public RMQChannelPool pool;
-  String HOSTNAME = "localhost";
-  //String HOSTNAME = "35.89.78.12";
+  //String HOSTNAME = "localhost";
+  String HOSTNAME = "35.161.68.70";
   String USERNAME = "guest";
   String PASSWORD = "guest";
   Integer PORT = 5672;
@@ -87,7 +87,7 @@ public class TwinderServlet extends HttpServlet {
     channel.basicPublish("exchange1", "", null, message.getBytes());
     pool.returnObject(channel);
     //channel.close();
-    //System.out.println(" [x] Sent to exchange:  '" + message + "'");
+    System.out.println(" [x] Sent to exchange:  '" + message + "'");
   }
 
   private boolean isUrlValid(String[] urlPath) {
