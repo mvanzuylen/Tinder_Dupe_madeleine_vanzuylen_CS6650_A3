@@ -44,13 +44,15 @@ public class GetTwinderServletStats extends HttpServlet {
       res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
     } else {
       String swiperId = urlParts[2];
-      ArrayList<String> results = getTwinderServletStatsDao.getMatches(swiperId);
+      ArrayList<Integer> results = getTwinderServletStatsDao.getStats(swiperId);
 
       // Convert results to json string
       Gson gson = new Gson();
       MatchStats matchStats = new MatchStats();
-      matchStats.setNumLlikes(Integer.parseInt(results.get(0)));
-      matchStats.setNumDislikes(Integer.parseInt(results.get(1)));
+      System.out.println(results.get(0));
+      System.out.println(results.get(1));
+      matchStats.setNumLlikes(results.get(0));
+      matchStats.setNumDislikes(results.get(1));
       String jsonInString = gson.toJson(matchStats);
 
       // Return MatchStats

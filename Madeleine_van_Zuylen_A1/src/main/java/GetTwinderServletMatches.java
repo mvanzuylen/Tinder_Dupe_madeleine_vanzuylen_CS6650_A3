@@ -46,7 +46,7 @@ public class GetTwinderServletMatches extends HttpServlet {
     } else {
       String swiperId = urlParts[2];
       // Returns up to 100 matches in array format
-      ArrayList<String> results = getTwinderServletMatchesDao.getMatches(swiperId);
+      ArrayList<Integer> results = getTwinderServletMatchesDao.getMatches(swiperId);
       Gson gson = new Gson();
       Matches matches = new Matches();
       matches.setMatchList(results);

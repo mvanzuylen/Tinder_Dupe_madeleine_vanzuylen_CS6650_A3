@@ -27,16 +27,16 @@ import java.util.List;
 
 public class Matches {
   @SerializedName("matchList")
-  private List<String> matchList = null;
+  private List<Integer> matchList = null;
 
-  public Matches matchList(List<String> matchList) {
+  public Matches matchList(List<Integer> matchList) {
     this.matchList = matchList;
     return this;
   }
 
-  public Matches addMatchListItem(String matchListItem) {
+  public Matches addMatchListItem(Integer matchListItem) {
     if (this.matchList == null) {
-      this.matchList = new ArrayList<String>();
+      this.matchList = new ArrayList<Integer>();
     }
     this.matchList.add(matchListItem);
     return this;
@@ -46,11 +46,11 @@ public class Matches {
    * Get matchList
    * @return matchList
    **/
-  public List<String> getMatchList() {
+  public List<Integer> getMatchList() {
     return matchList;
   }
 
-  public void setMatchList(List<String> matchList) {
+  public void setMatchList(List<Integer> matchList) {
     this.matchList = matchList;
   }
 
